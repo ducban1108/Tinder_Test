@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.white,
         appBar: _buildAppBar(),
         body: FutureBuilder(
           builder: (context, snapshot) {
@@ -106,6 +106,7 @@ class _MyHomePageState extends State<MyHomePage>
             child: Stack(
               children: <Widget>[
                 Card(
+                  // elevation: 2,
                   margin: EdgeInsets.only(top: 130),
                   child: Container(
                       height: 300,
@@ -114,102 +115,148 @@ class _MyHomePageState extends State<MyHomePage>
                         padding: EdgeInsets.only(top: 45.0),
                         child: Column(
                           children: [
-                            Container(
-                              height: 100.0,
-                              child: TabBarView(
-                                controller: _controller,
-                                children: <Widget>[
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 20),
-                                    child: Container(
-                                      child: Center(
-                                        child: Column(
-                                          children: [
-                                            Text(title),
-                                            Text('$first $last')
-                                          ],
+                            Expanded(
+                              flex: 4,
+                              child: Container(
+                                height: 100.0,
+                                child: TabBarView(
+                                  controller: _controller,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: EdgeInsets.only(top: 40),
+                                      child: Container(
+                                        child: Center(
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                title,
+                                                style: TextStyle(fontSize: 20),
+                                              ),
+                                              Text(
+                                                '$first $last',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 25),
+                                              )
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 20),
-                                    child: Container(
-                                      child: Center(
-                                        child: Column(
-                                          children: [
-                                            Text('Date of birth'),
-                                            Text(dob)
-                                          ],
+                                    Padding(
+                                      padding: EdgeInsets.only(top: 40),
+                                      child: Container(
+                                        child: Center(
+                                          child: Column(
+                                            children: [
+                                              Text('Date of birth',
+                                                  style:
+                                                      TextStyle(fontSize: 20)),
+                                              Text(dob,
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 25))
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 20),
-                                    child: Container(
-                                      child: Center(
-                                        child: Column(
-                                          children: [
-                                            Text('Address'),
-                                            Text(street),
-                                            Text(city),
-                                            Text(state)
-                                          ],
+                                    Padding(
+                                      padding: EdgeInsets.only(top: 40),
+                                      child: Container(
+                                        child: Center(
+                                          child: Column(
+                                            children: [
+                                              Text('Address',
+                                                  style:
+                                                      TextStyle(fontSize: 20)),
+                                              Text(street,
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 25)),
+                                              Text(city,
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 25)),
+                                              Text(state,
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 25))
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 20),
-                                    child: Container(
-                                      child: Center(
-                                        child: Column(
-                                          children: [
-                                            Text('Phonenumber'),
-                                            Text(phone),
-                                          ],
+                                    Padding(
+                                      padding: EdgeInsets.only(top: 40),
+                                      child: Container(
+                                        child: Center(
+                                          child: Column(
+                                            children: [
+                                              Text('Phonenumber',
+                                                  style:
+                                                      TextStyle(fontSize: 20)),
+                                              Text(phone,
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 25)),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 20),
-                                    child: Container(
-                                      child: Center(
-                                        child: Column(
-                                          children: [
-                                            Text('Username'),
-                                            Text(username),
-                                          ],
+                                    Padding(
+                                      padding: EdgeInsets.only(top: 40),
+                                      child: Container(
+                                        child: Center(
+                                          child: Column(
+                                            children: [
+                                              Text('Username',
+                                                  style:
+                                                      TextStyle(fontSize: 20)),
+                                              Text(username,
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 25)),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
-                            TabBar(
-                                indicatorColor: Colors.transparent,
-                                unselectedLabelColor: Colors.grey,
-                                labelColor: Colors.green[200],
-                                controller: _controller,
-                                isScrollable: true,
-                                tabs: [
-                                  Tab(
-                                    icon: Icon(Icons.person),
-                                  ),
-                                  Tab(
-                                    icon: Icon(Icons.calendar_today_rounded),
-                                  ),
-                                  Tab(
-                                    icon: Icon(Icons.map),
-                                  ),
-                                  Tab(
-                                    icon: Icon(Icons.phone),
-                                  ),
-                                  Tab(icon: Icon(Icons.lock))
-                                ])
+                            Expanded(
+                              flex: 2,
+                              child: TabBar(
+                                  indicatorColor: Colors.transparent,
+                                  unselectedLabelColor: Colors.grey,
+                                  labelColor: Colors.green[200],
+                                  controller: _controller,
+                                  isScrollable: true,
+                                  tabs: [
+                                    Tab(
+                                      icon: Icon(Icons.person),
+                                    ),
+                                    Tab(
+                                      icon: Icon(Icons.calendar_today_rounded),
+                                    ),
+                                    Tab(
+                                      icon: Icon(Icons.map),
+                                    ),
+                                    Tab(
+                                      icon: Icon(Icons.phone),
+                                    ),
+                                    Tab(icon: Icon(Icons.lock))
+                                  ]),
+                            )
                           ],
                         ),
                       )),
